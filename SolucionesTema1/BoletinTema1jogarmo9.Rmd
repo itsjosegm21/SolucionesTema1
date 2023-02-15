@@ -37,3 +37,17 @@ setdiff(rownames(B), rownames(A))
 #Gran parte de los elementos aparecen diferentes porque no están bien escritos.
 ```
 
+```{r}
+library(MASS)
+library(robustbase)
+library(car)
+
+qqPlot(log(mammals$brain))
+qqPlot(log(Animals2$brain))
+#Presentan un comportamineto similar, ya que sus graficas son similares.
+```
+
+```{r}
+
+```
+
