@@ -57,6 +57,18 @@ sum(table(head(libReturn$results,n=5)))
 ```
 
 ```{r}
+dim(cabbages)
+str(cabbages)
+head(cabbages)
+tail(cabbages)
+sum(is.na(cabbages))
 
+dim(Chile)
+str(Chile)
+head(Chile)
+tail(Chile)
+sum(is.na(Chile))
+
+summary(c(cabbages, Chile))
 ```
 
