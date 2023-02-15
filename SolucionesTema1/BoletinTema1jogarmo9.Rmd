@@ -1,0 +1,39 @@
+---
+title: "BoletinTema1jogarmo9"
+author: "Jose Garcia Mora"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(MASS)
+library(robustbase)
+A <- MASS::mammals
+B <- robustbase::Animals2
+
+dim(A)
+head(A)
+tail(A)
+str(A)
+
+rownames(A)
+colnames(A)
+
+dim(B)
+head(B)
+tail(B)
+str(B)
+
+rownames(B)
+colnames(B)
+
+commonAnimals <- intersect(rownames(A), rownames(B))
+setdiff(rownames(A), rownames(B))
+setdiff(rownames(B), rownames(A))
+#Gran parte de los elementos aparecen diferentes porque no están bien escritos.
+```
+
