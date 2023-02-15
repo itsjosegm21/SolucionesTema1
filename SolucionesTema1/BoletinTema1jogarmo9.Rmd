@@ -72,3 +72,13 @@ sum(is.na(Chile))
 summary(c(cabbages, Chile))
 ```
 
+```{r}
+library(ggplot2)
+#qqplot(cabbages$VitC, y = )
+#qqplot(cabbages$HeadWt, y=)
+```
+
+```{r}
+ggplot(data=cabbages, aes(x=VitC, fill=Cult))+geom_histogram(alpha=0.5)
+```
+
