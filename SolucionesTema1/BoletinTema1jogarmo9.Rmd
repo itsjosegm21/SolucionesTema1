@@ -82,3 +82,33 @@ library(ggplot2)
 ggplot(data=cabbages, aes(x=VitC, fill=Cult))+geom_histogram(alpha=0.5)
 ```
 
+```{r}
+#Diagrama de dispersión global.
+plot(whiteside$Temp, whiteside$Gas)
+#Diagrama de dispersión etiquetando según un factor.
+plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside$Insul])
+legend(x="topright",legend=c("Insul = Before","Insul = After"), pch=c(6,16))
+# Planteamos 2 modelos lineales, uno para los datos de cada factor
+Model1 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "Before"))
+Model2 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "After"))
+# Representamos las rectas correspondientes a cada modelo lineal
+abline(Model1, lty=2)
+abline(Model2)
+```
+
+```{r}
+#Diagrama de dispersión global.
+plot(cabbages$VitC, cabbages$HeadWt)
+
+#Diagrama de dispersión etiquetando según un factor.
+plot(cabbages$VitC, cabbages$HeadWt, pch=c(6,16)[whiteside$Insul])
+legend(x="topright",legend=c("Cult = c39","Cult = c52"), pch=c(6,16))
+
+# Planteamos 2 modelos lineales, uno para los datos de cada factor
+Model1 <- lm(HeadWt ~ VitC, data = cabbages, subset = which(Cult == "c39"))
+Model2 <- lm(HeadWt ~ VitC, data = cabbages, subset = which(Cult == "c52"))
+# Representamos las rectas correspondientes a cada modelo lineal
+abline(Model1, lty=2)
+abline(Model2)
+```
+
