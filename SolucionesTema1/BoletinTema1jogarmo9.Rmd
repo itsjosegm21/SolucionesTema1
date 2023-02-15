@@ -48,6 +48,15 @@ qqPlot(log(Animals2$brain))
 ```
 
 ```{r}
+libReturn<-library()
+libReturn[[2]][1:5,1]
+
+head(libReturn$results,n=5)
+sum(table(head(libReturn$results,n=5)))
+#Hay 15 librerias instaladas.
+```
+
+```{r}
 
 ```
 
